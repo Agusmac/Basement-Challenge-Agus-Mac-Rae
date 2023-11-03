@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* this is just to make scrollbars match the black theme */
+:root {
+    color-scheme: dark;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.text-outline {
+    -webkit-text-stroke: 2px;
+    color: black;
+    -webkit-text-stroke-color: white;
+}
+
+.text-outline-thin {
+    -webkit-text-stroke: 1px;
+    color: black;
+    -webkit-text-stroke-color: white;
+}
+
+.marquee {
+    animation: marquee 9s linear infinite;
+}
+
+.floating {
+    animation: spin 12s ease-in-out infinite alternate;
+}
+
+.floating2 {
+    animation: floating 2s ease-in-out infinite alternate-reverse;
+}
+
+@media screen and (min-width: 540px) and (max-width: 639px) {
+    .cartFix {
+        padding-bottom: 264px !important;
+    }
+}
+
+
+/* this should be in a animation focused file */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(-10%)
+    }
+
+    to {
+        transform: translateY(10%)
+    }
+}
